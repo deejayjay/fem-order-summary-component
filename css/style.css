@@ -89,9 +89,87 @@ body::before {
 main {
   background-color: var(--color-white);
   border-radius: 20px;
-  padding: 2.4rem;
+  overflow: hidden;
 }
-/* Write a media query for desktop layout */
+
+.banner {
+  width: 100%;
+}
+
+.content {
+  padding: 2.4rem 2.4rem 1.7rem;
+  text-align: center;
+}
+
+.content__title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0.8rem 0 1.6rem;
+  color: var(--color-dark-blue);
+}
+
+.content__para {
+  margin-bottom: 2.4rem;
+  line-height: 2.5rem;
+  color: var(--color-desaturated-blue);
+}
+
+.plans {
+  background-color: var(--color-very-pale-blue);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border-radius: 11px;
+  padding: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.icon-music {
+  width: 4.8rem;
+  aspect-ratio: 1 / 1;
+}
+
+.plans__details {
+  font-size: 1.4rem;
+  flex: 1;
+  text-align: left;
+}
+
+.plans__title {
+  font-weight: 900;
+  color: var(--color-dark-blue);
+}
+
+.plans__price {
+  font-weight: 500;
+  color: var(--color-desaturated-blue);
+}
+
+.btn-change {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-bright-blue);
+}
+
+.btn-proceed,
+.btn-cancel {
+  display: block;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.5rem;
+  padding: 1em;
+}
+
+.btn-proceed {
+  background-color: var(--color-bright-blue);
+  color: var(--color-white);
+  border-radius: 11px;
+  margin-bottom: 0.9rem;
+}
+
+.btn-cancel {
+  color: var(--color-desaturated-blue);
+}
 
 @media only screen and (min-width: 1024px) {
   body::before {
