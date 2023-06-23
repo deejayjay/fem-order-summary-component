@@ -50,16 +50,6 @@ h6 {
 }
 /* End of CSS reset */
 
-.attribution {
-  position: absolute;
-  bottom: 2rem;
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 html {
   font-size: 62.5%;
 }
@@ -68,43 +58,46 @@ body {
   background-color: var(--color-pale-blue);
   position: relative;
   padding: 2.4rem;
-  font-size: 1.6rem;
-  font-family: 'Red Hat Display', sans-serif;
+  font-size: clamp(1.5rem, 2vw, 1.6rem);
+  font-family: "Red Hat Display", sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 body::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   width: 100%;
   height: 30vh;
-  background: url(../assets/images/pattern-background-mobile.svg) no-repeat 0 bottom / cover;
+  background: url(../assets/images/pattern-background-mobile.svg) no-repeat 0
+    bottom / cover;
 }
 
 main {
   background-color: var(--color-white);
   border-radius: 20px;
-  overflow: hidden;
+  max-width: 45rem;
 }
 
 .banner {
   width: 100%;
+  border-radius: 20px 20px 0 0;
 }
 
 .content {
-  padding: 2.4rem 2.4rem 1.7rem;
+  padding: 3.2rem 2.4rem 1.7rem;
   text-align: center;
 }
 
 .content__title {
-  font-size: 2.2rem;
+  font-size: clamp(2.2rem, 5vw, 2.8rem);
   font-weight: 900;
-  margin: 0.8rem 0 1.6rem;
+  margin-bottom: 1.6rem;
   color: var(--color-dark-blue);
 }
 
@@ -130,7 +123,7 @@ main {
 }
 
 .plans__details {
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
   flex: 1;
   text-align: left;
 }
@@ -146,9 +139,17 @@ main {
 }
 
 .btn-change {
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 1vw, 1.4rem);
   font-weight: 700;
   color: var(--color-bright-blue);
+  text-decoration: underline;
+  transition: color 0.25s, text-decoration 0.25s;
+}
+
+.btn-change:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-bright-blue-70);
 }
 
 .btn-proceed,
@@ -160,19 +161,65 @@ main {
   padding: 1em;
 }
 
+.btn-proceed:hover,
+.btn-cancel:hover {
+  cursor: pointer;
+}
+
 .btn-proceed {
   background-color: var(--color-bright-blue);
   color: var(--color-white);
   border-radius: 11px;
   margin-bottom: 0.9rem;
+  box-shadow: 0 15px 10px var(--color-bright-blue-15);
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+.btn-proceed:hover {
+  background-color: var(--color-bright-blue-70);
+  box-shadow: 0 0 0 var(--color-bright-blue-15);
 }
 
 .btn-cancel {
   color: var(--color-desaturated-blue);
+  transition: color 0.25s;
+}
+
+.btn-cancel:hover {
+  color: var(--color-dark-blue);
+}
+
+.attribution {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 @media only screen and (min-width: 1024px) {
   body::before {
-    background: url(../assets/images/pattern-background-desktop.svg) no-repeat 0 bottom / cover;
+    background: url(../assets/images/pattern-background-desktop.svg) no-repeat 0
+      bottom / cover;
+    height: 50vh;
+  }
+
+  .content {
+    padding: 4.5rem 4.8rem 3.3rem;
+  }
+
+  .content__para {
+    margin-bottom: 2rem;
+  }
+
+  .plans {
+    margin-bottom: 3.2rem;
+    padding: 2.5rem 2.4rem;
+  }
+
+  .btn-proceed {
+    margin-bottom: 1.7rem;
   }
 }

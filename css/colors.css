@@ -1,6 +1,8 @@
 :root {
   --color-pale-blue: hsl(225, 100%, 94%);
   --color-bright-blue: hsl(245, 75%, 52%);
+  --color-bright-blue-70: hsl(245, 83%, 68%);
+  --color-bright-blue-15: rgba(56, 41, 224, 0.15);
   --color-very-pale-blue: hsl(225, 100%, 98%);
   --color-desaturated-blue: hsl(224, 23%, 55%);
   --color-dark-blue: hsl(223, 47%, 23%);
